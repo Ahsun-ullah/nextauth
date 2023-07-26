@@ -42,7 +42,15 @@ const Navbar = () => {
         </Link>
         {session?.user ? (
           <items>
-            <Button onClick={() => signOut()} type="primary" danger>
+            <Button
+              onClick={() =>
+                signOut({
+                  callbackUrl: "http://localhost:3000/",
+                })
+              }
+              type="primary"
+              danger
+            >
               Logout
             </Button>
           </items>
